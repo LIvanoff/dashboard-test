@@ -9,25 +9,25 @@
 git clone https://github.com/LIvanoff/dashboard-test
 ```
 
-Перейдем в папку с нашим проектом
+Перейти в папку с проектом
 ```shell
 cd dashboard-test
 ```
 
 ## Запуск приложения
 
-Соберём образ
+Собрать образ
 
 ```shell
 docker build . -t dashboard-test 
 ```
 
-Запустим контейнер
+Запустить контейнер
 ```shell
 docker run -p 8501:8501 dashboard-test 
 ```
 
-После запуска перейдём по ссылке http://127.0.0.1:8501/
+После запуска перейти по ссылке http://127.0.0.1:8501/
 
 
 
