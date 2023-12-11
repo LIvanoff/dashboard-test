@@ -142,7 +142,7 @@ with tab2:
     ax[0, 1].set_title(f"Выборка после {age} лет", fontsize=8)
     ax[1, 1].set_xlabel('Пропуски рабочих дней, дни', fontsize=6)
 
-    ax[1, 0].hist(old.work_days)
-    ax[1, 1].hist(young.work_days)
+    ax[1, 0].hist(young.work_days)
+    ax[1, 1].hist(old.work_days)
 
     st.pyplot(fig, use_container_width=False)
