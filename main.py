@@ -40,16 +40,17 @@ age = st.sidebar.select_slider(
     options=sorted(dataframe.age.unique()))
 hypot = dataframe[dataframe.work_days > work_days]
 
-# графики распределений
+# графики статистик признаков
 col0_0, col0_1 = st.columns([3, 1])
-col0_0.subheader("Графики распределений")
+col0_0.subheader("Графики статистик по признакам")
 fig, ax = plt.subplots(1, 3, figsize=(6, 2))
 ax[0].set_title("Пропуски рабочих дней", fontsize=6)
 ax[0].hist(hypot.work_days)
 ax[1].set_title("Возраст", fontsize=6)
 ax[1].hist(hypot.age)
 ax[2].set_title("Пол", fontsize=6)
-ax[2].hist(hypot.sex)
+ax[2].pie(list(hypot.sex.value_counts()), explode=(0, 0.1), labels=['Мужчины', 'Женщины'], autopct='%1.1f%%', shadow=True, startangle=90,
+       textprops={'fontsize': 5})
 col0_0.pyplot(fig, use_container_width=False)
 
 # отрисовка датафрейма
