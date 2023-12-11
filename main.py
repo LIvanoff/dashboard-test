@@ -56,10 +56,10 @@ if __name__ == '__main__':
     col0_1.subheader(f"Датафрейм")
     col0_1.write(hypot)
 
-    tab1, tab2 = st.tabs(["Гипотеза 1", "Гипотеза 2"])
+    tab0, tab1 = st.tabs(["Гипотеза 1", "Гипотеза 2"])
 
     #отрисовка вкладки с Гипотезой 1
-    with tab1:
+    with tab0:
         # формирование выборок
         male = hypot.work_days[hypot['sex'] == 1]
         female = hypot.work_days[hypot['sex'] == 0]
@@ -115,7 +115,7 @@ if __name__ == '__main__':
         col1_1.plotly_chart(fig, theme="streamlit", use_container_width=True)
 
     #отрисовка вкладки с Гипотезой 2
-    with tab2:
+    with tab1:
         # формирование выборок
         old = hypot[hypot['age'] > age]
         young = hypot[hypot['age'] <= age]
