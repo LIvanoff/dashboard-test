@@ -143,10 +143,10 @@ if __name__ == '__main__':
         ax[0, 0].legend(*scatter.legend_elements(), loc='upper right', bbox_to_anchor=(2.7, 1))
         ax[0, 0].set_xticks(old['work_days'])
         ax[0, 0].set_ylabel('Возраст, лет', fontsize=5)
-        ax[0, 0].set_title(f"Выборка до {age} лет включительно", fontsize=8)
+        ax[0, 0].set_title(f"Выборка до {age} включительно", fontsize=8)
         ax[1, 0].set_xlabel('Пропуски рабочих дней, дни', fontsize=5)
         ax[0, 1].scatter(x=old['work_days'], y=old['age'], c=list(old['sex']))
-        ax[0, 1].set_title(f"Выборка после {age} лет", fontsize=8)
+        ax[0, 1].set_title(f"Выборка после {age}", fontsize=8)
         ax[1, 1].set_xlabel('Пропуски рабочих дней, дни', fontsize=6)
 
         ax[1, 0].hist(young.work_days)
