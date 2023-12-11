@@ -2,18 +2,16 @@
 <img alt="???" src="https://colab.research.google.com/assets/colab-badge.svg">
 </a>
 
-## Установка и запуск приложения
+## Установка
 Склонировать репозиторий в папку, в путь без пробелов и кириллицы
 
 ```shell
 git clone https://github.com/LIvanoff/dashboard-test
 ```
 
-Установить все необходимые зависимости
-
+Перейдем в папку с нашим проектом
 ```shell
 cd dashboard-test
-pip install -r requirements.txt
 ```
 
 ## Запуск приложения
