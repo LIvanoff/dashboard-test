@@ -40,6 +40,7 @@ age = st.sidebar.select_slider(
     options=sorted(dataframe.age.unique()))
 hypot = dataframe[dataframe.work_days > work_days]
 
+# графики распределений
 col0_0, col0_1 = st.columns([3, 1])
 col0_0.subheader("Графики распределений")
 fig, ax = plt.subplots(1, 3, figsize=(6, 2))
@@ -49,13 +50,15 @@ ax[1].set_title("Возраст", fontsize=6)
 ax[1].hist(hypot.age)
 ax[2].set_title("Пол", fontsize=6)
 ax[2].hist(hypot.sex)
-
 col0_0.pyplot(fig, use_container_width=False)
+
+# отрисовка датафрейма
 col0_1.subheader(f"Датафрейм")
 col0_1.write(hypot)
 
 tab1, tab2 = st.tabs(["Гипотеза 1", "Гипотеза 2"])
 
+#отрисовка вкладки с Гипотезой 1
 with tab1:
     male = hypot.work_days[hypot['sex'] == 1]
     female = hypot.work_days[hypot['sex'] == 0]
@@ -107,7 +110,7 @@ with tab1:
                  )
     col1_1.plotly_chart(fig, theme="streamlit", use_container_width=True)
 
-
+#отрисовка вкладки с Гипотезой 2
 with tab2:
     old = hypot[hypot['age'] > age]
     young = hypot[hypot['age'] <= age]
@@ -127,17 +130,17 @@ with tab2:
     st.markdown(msg)
     st.divider()
 
-    # col2_0, col2_1 = st.columns([3, 1])
     fig, ax = plt.subplots(2, 2, figsize=(6, 4))
 
-    # col2_0.subheader(f"Выборка после {age} лет")
-    scatter = ax[0, 0].scatter(x=old['work_days'], y=old['age'], c=list(old['sex']))
+    scatter = ax[0, 0].scatter(x=young['work_days'], y=young['age'], c=list(young['sex']))
     ax[0, 0].legend(*scatter.legend_elements(), loc='upper right', bbox_to_anchor=(2.7, 1))
     ax[0, 0].set_xticks(old['work_days'])
     ax[0, 0].set_ylabel('Возраст, лет', fontsize=5)
+    ax[0, 0].set_title(f"Выборка до {age} лет включительно", fontsize=8)
     ax[1, 0].set_xlabel('Пропуски рабочих дней, дни', fontsize=5)
-    ax[0, 1].scatter(x=young['work_days'], y=young['age'], c=list(young['sex']))
-    ax[1, 1].set_xlabel('Пропуски рабочих дней, дни', fontsize=5)
+    ax[0, 1].scatter(x=old['work_days'], y=old['age'], c=list(old['sex']))
+    ax[0, 1].set_title(f"Выборка после {age} лет", fontsize=8)
+    ax[1, 1].set_xlabel('Пропуски рабочих дней, дни', fontsize=6)
 
     ax[1, 0].hist(old.work_days)
     ax[1, 1].hist(young.work_days)
