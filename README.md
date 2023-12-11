@@ -1,3 +1,7 @@
+<a href="https://colab.research.google.com/github/LIvanoff/dashboard-test/blob/master/notebook.ipynb\">
+<img alt="???" src="https://colab.research.google.com/assets/colab-badge.svg">
+</a>
+
 ## Установка и запуск приложения
 Склонировать репозиторий в папку, в путь без пробелов и кириллицы
 
@@ -17,6 +21,13 @@ pip install -r requirements.txt
 ```shell
 streamlit run main.py
 ```
+
+## Colab
+
+Jupyter Notebook с проведённым исследованием доступен по следующим ссылкам:
+[colab](https://colab.research.google.com/github/LIvanoff/dashboard-test/blob/master/notebook.ipynb)
+[github](https://github.com/LIvanoff/dashboard-test/blob/master/notebook.ipynb) 
+
 
 ## Требования
 <li> Python 3.9+
