@@ -1,4 +1,4 @@
-<a href="https://colab.research.google.com/github/LIvanoff/dashboard-test/blob/master/notebook.ipynb\">
+<a href="https://colab.research.google.com/github/LIvanoff/dashboard-test/blob/master/notebook.ipynb">
 <img alt="???" src="https://colab.research.google.com/assets/colab-badge.svg">
 </a>
 
