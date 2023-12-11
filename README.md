@@ -16,11 +16,22 @@ cd dashboard-test
 pip install -r requirements.txt
 ```
 
-Запуск приложения
+## Запуск приложения
+
+Соберём образ
 
 ```shell
-streamlit run main.py
+docker build . -t dashboard-test 
 ```
+
+Запустим контейнер
+```shell
+docker run -p 8501:8501 dashboard-test 
+```
+
+После запуска перейдём по ссылке http://127.0.0.1:8501/
+
+
 
 ## Colab
 
